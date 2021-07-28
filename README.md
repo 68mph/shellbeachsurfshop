@@ -1,3 +1,3 @@
 # shellbeachsurfshop
 Shell beach surf shop website
-testing the first commit
+testing the first commit.
