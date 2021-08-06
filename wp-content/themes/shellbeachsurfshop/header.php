@@ -11,13 +11,31 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+<head profile="http://gmpg.org/xfn/11">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+
 	<?php wp_head(); ?>
+
+	<script type='text/javascript'>
+	$(document).ready(function () {
+	$(window).scroll(function () {
+	if ($(document).scrollTop() > 10) {
+		$("header").addClass("scrolled");
+	} else {
+		$("header").removeClass("scrolled");
+	}
+	});
+	});
+	</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -25,24 +43,17 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'shellbeachsurfshop' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header" role="banner">
+		<div class="topmenu">
+		<div class="container">
+			<p><i class="fas fa-clock"></i> Store Hours: 10:00 AM – 6:00 PM</p>
+			<p><i class="fas fa-phone"></i> Call Us (805) 773-1855</p>
+			<p><i class="fas fa-map-marker-alt"></i> 2665 Shell Beach Rd Ste K, California 93449</p>
+		</div>
+		</div>
+		<div class="container">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$shellbeachsurfshop_description = get_bloginfo( 'description', 'display' );
-			if ( $shellbeachsurfshop_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $shellbeachsurfshop_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+		<a class="logoLink" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?> - <?php bloginfo( 'description' ) ?>" rel="home"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sbs-logo.svg" alt="<?php bloginfo( 'name' ) ?> - <?php bloginfo( 'description' ) ?>" id="logo" class="img-responsive img-fluid center-block" /> </a> 
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
@@ -56,4 +67,8 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+		</div>
 	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+

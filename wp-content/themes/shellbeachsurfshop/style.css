@@ -59,6 +59,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 /* Document
 	 ========================================================================== */
 
@@ -79,6 +81,7 @@ html {
  */
 body {
 	margin: 0;
+	padding:0;
 }
 
 /**
@@ -127,6 +130,7 @@ pre {
  */
 a {
 	background-color: transparent;
+	text-decoration: none;
 }
 
 /**
@@ -415,10 +419,14 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-family: 'Oswald', sans-serif;
+	padding:0;
+	margin:0;
 }
 
 p {
-	margin-bottom: 1.5em;
+	padding:0;
+	margin:0;
 }
 
 dfn,
@@ -650,6 +658,7 @@ textarea {
 .main-navigation {
 	display: block;
 	width: 100%;
+	padding:0 12px;
 }
 
 .main-navigation ul {
@@ -695,6 +704,8 @@ textarea {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	color:#ffffff;
+	padding:16px 24px;
 }
 
 /* Small menu. */
@@ -711,6 +722,7 @@ textarea {
 
 	.main-navigation ul {
 		display: flex;
+		justify-content:space-around;
 	}
 }
 
@@ -741,15 +753,14 @@ textarea {
 	flex: 1 0 50%;
 }
 
+.current-menu-item {
+	background: #FF9F1C;
+}
+
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
 	display: block;
-}
-
-.post,
-.page {
-	margin: 0 0 1.5em;
 }
 
 .updated:not(.published) {
@@ -967,3 +978,118 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+/* header
+--------------------------------------------- */
+header {
+	position:fixed;
+	z-index:2;
+	width:100%;
+
+}
+
+.logoLink {
+	max-width:250px;
+}
+
+.topmenu {
+	background-color: #2438A0;
+}
+
+.topmenu .container {
+	display: flex;
+}
+
+.topmenu p {
+	color:#fff;
+	padding:12px;
+}
+
+.fas {
+	color:#5ED7EA;
+
+}
+
+.container {
+	max-width:1140px;
+	margin:0 auto;
+}
+
+.pageIntro {
+    position: relative;
+    height: 655px;
+    padding-top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagetitle {
+	min-width:1140px;
+	margin:5vw auto 0;
+}
+
+.pagetitle p {
+    color:#ffffff;
+    font-size:1.5rem;
+    padding:0 0 2rem 0;
+}
+
+.pageIntro .intro {
+	max-width:620px;
+}
+
+.home .pageIntro {
+    height: 100vh;
+}
+
+.site-branding {
+	display:flex;
+	justify-content: center;
+	padding: 16px;
+}
+
+.pagetitle h1 {
+	font-size:1rem;
+	text-transform: uppercase;
+	color:#5ED7EA;
+}
+
+.pagetitle h2 {
+	font-size:3.5rem;
+	color:#ffffff;
+	line-height: 4rem;
+	padding: 0 0 2rem;
+}
+
+.button {
+	background:#FF9F1C;
+	padding:16px 24px;
+	color:#ffffff;
+	display: inline-block;
+	text-transform: uppercase;
+}
+
+header.scrolled {
+	background-color: #fff !important;
+	transition: background-color 200ms linear;
+  }
+
+/* Body Content
+--------------------------------------------- */
+article {
+	max-width:1280px;
+	margin:0 auto;
+}
+
+
+/* Footer
+--------------------------------------------- */
+
+footer {
+	background-color: #2438A0;
+}
+
+/* Media Queries
+--------------------------------------------- */

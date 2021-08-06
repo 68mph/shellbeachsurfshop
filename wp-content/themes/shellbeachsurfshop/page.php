@@ -14,6 +14,21 @@
 
 get_header();
 ?>
+		<div class="hero">	<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+          
+		  <div class="pageIntro" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat fixed center 0;background-size:cover;background-attachment:scroll;">
+			 <section class="pagetitle">
+			<div class="intro">	 
+			  <h1><?php the_title(); ?></h1>
+			  <h2><?php the_field('sub_title'); ?></h2>
+			  <p><?php the_field('description'); ?></p>
+
+				 <a class="button" href="#anchor">Learn More</a>
+			</div>
+			 </section>
+		  </div>
+		</div>
+
 
 	<main id="primary" class="site-main">
 
